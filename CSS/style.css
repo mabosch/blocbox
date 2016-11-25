@@ -121,6 +121,10 @@ header nav ul > li.bttn-outline:hover > a{
 /* HERO */
 
 */
+.home-hero {
+	width:1400px;
+	margin:0 auto;
+}
 .home-hero .row{
 	width: 1400px;
 	margin: 0 auto;
