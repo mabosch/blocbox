@@ -835,30 +835,67 @@ footer .logo{
 }
 
 /* DASHBOARD */
-/* DASHBOARD */
+/* LEFT NAVBAR */
 .dashboard {
    	background:#F7F7F7;
 }
 .left-nav {
-   	height: 100vh;
-   	width:15%;
-   	color:#FFFFFF;
-   	background: #34495E;
+   	height: 100%;
+   	width:280px;
+   	z-index: 5;
    	background-image: linear-gradient(206deg, #738056 0%, #2C3620 94%);
-   	float:left;
-   	position: fixed;
+ 	position: absolute;
+ 	-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    transform: translate(-280px,0);
+        -webkit-transform: translate(-280px,0); /** Chrome & Safari **/
+        -o-transform: translate(-280px,0); /** Opera **/
+        -moz-transform: translate(-280px,0); /** Firefox **/
+
+}
+.left-nav.open {
    	display:block;
+   	background-image: linear-gradient(206deg, #738056 0%, #2C3620 94%);
+   	width:280px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    transform: translate(0,0);
+        -webkit-transform: translate(0,0); /** Chrome & Safari **/
+        -o-transform: translate(0,0); /** Opera **/
+        -moz-transform: translate(0,0); /** Firefox **/
+        z-index: 100;
+}
+.hamburger {
+	margin-left: 15px;
+    position:absolute;
+    z-index: 1000;
+    background:#2C3620;
+    color:#FFF;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    left: 5px;
+    top: 15px;
+}
+.transparent {
+	background: transparent;
+	margin-left: 0; 
 }
 .left-nav .site-logo {
-   	padding:10px 0;
-   	background:#2C3620;
-   	display:block;
+   	padding: 10px 0;
+   	background: #2C3620;
+   	display: block;
    	text-align: center;
    	width: 100%;
-   	height: 72px;
 }
 .left-nav img{
 	width: 80%;
+	max-width: 173px;
 }
 .left-nav .items {
    	padding:0;
@@ -878,13 +915,15 @@ footer .logo{
 }
 .left-nav .items ul li {
    	list-style-type: none;
-   	margin-bottom: 15px;
+   	margin-bottom: 5px;
 }
 .left-nav .items ul li a {
    	color:#FFFFFF;
    	text-decoration: none;
    	font-weight: 100;
    	padding: 5px 8% 5px 6%;
+   	display: block;
+   	width: 100%;
 }
 .left-nav .items .active {
 	background-color: rgba(255, 255, 255, 0.2);
@@ -895,6 +934,32 @@ footer .logo{
    	width:16px;
    	text-align: center;
    	margin-right:8px;
+}
+@media (min-width:992px) {
+    .left-nav {
+     	height: 100vh;
+     	width:15%;
+     	color:#FFFFFF;
+     	background: #34495E;
+     	background-image: linear-gradient(206deg, #738056 0%, #2C3620 94%);
+     	float:left;
+     	position: fixed;
+     	display:block;
+     	transform: translate(0,0);
+        -webkit-transform: translate(0,0); /** Chrome & Safari **/
+        -o-transform: translate(0,0); /** Opera **/
+        -moz-transform: translate(0,0); /** Firefox **/
+    }
+    .left-nav.open {
+     	width:15%;
+     	transform: translate(0,0);
+        -webkit-transform: translate(0,0); /** Chrome & Safari **/
+        -o-transform: translate(0,0); /** Opera **/
+        -moz-transform: translate(0,0); /** Firefox **/
+    }
+    .hamburger {
+     	display:none;
+    }
 }
 
 /* LEFT NAVBAR SETTINGS */
@@ -918,15 +983,19 @@ footer .logo{
    	display: inline-block;
    	vertical-align: top;
    	font-weight: 400;
-   	margin: 25px 0 0 10px;
+   	margin: 27px 0 0 5px;
 }
-.left-nav .settings a {
-   	color:#FFFFFF;
+.left-nav .settings .menu-settings {
+	font-size: 16px;
+   	color: #FFFFFF;
    	text-decoration: none;
    	text-align: right;
    	float: right;
    	margin-right: 10px;
    	margin-top: 25px;
+}
+.left-nav .settings .menu-settings > li a {
+	color: #fff;
 }
 
 /* CONTENT */
@@ -942,7 +1011,7 @@ footer .logo{
 .content .header h1 {
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
     font-weight: 300;
-    margin:0 0 30px;
+    margin: 15px 0 30px;
     font-size: 36px;
     color: #738056;
     line-height: 44px;
@@ -961,6 +1030,7 @@ footer .logo{
 .item-box {
     display:block;
     height:230px;
+    max-width: 300px;
     background: #FFFFFF;
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.40);
     position: relative;
@@ -1005,7 +1075,7 @@ footer .logo{
     .content {
      	padding:1.5em 1%;
      	float:right;
-     	width:90%;
+     	width: 100%;
      	position: relative;
     }
    	.content-item {
@@ -1014,17 +1084,23 @@ footer .logo{
      	float:left;
      	display:block;
    	}
+   	.content .header h1 {
+	    margin: 15px 0 30px 60px;
+	}
+	.bttn{
+		padding: 10px 30px;
+	}
 }
 /* Tablets */
 @media (min-width:768px) {
    	.content {
      	padding:1.5em 5%;
      	float:right;
-     	width:90%;
+     	width:100%;
      	position: relative;
    	}
    	.content > .container {
-     	width:700px;
+     	width: 700px;
    	}
    	.content-item {
     	width:31.33333%;
@@ -1047,6 +1123,12 @@ footer .logo{
      	margin:0 1% 25px;
    	}
 }
+ 	@media (min-width:993px) {
+  	.content .header h1 {
+	    margin: 15px 0 30px;
+	}
+}
+
 
 
 

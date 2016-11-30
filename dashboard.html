@@ -14,9 +14,11 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/dropit.css">
 </head>
 
 <body>
+
 	<!-- LEFT NAV -->
 	<nav id="left-nav" class="left-nav">
 	    <a href="index.html" class="site-logo"><img src="images/site-logo.png"></a>
@@ -38,7 +40,16 @@
 	    <div class="settings">
 	     	<img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
 	     	<p>Marc Aballí</p>
-	     	<a href="#"><i class="fa fa-cog"></i></a>
+        <ul class="menu-settings">
+            <li>
+              <a href="#"><i class="fa fa-cog"></i></a>
+              <ul>
+                  <li><a href="#"><i class="fa fa-file-o"></i> Note</a></li>
+                  <li><a href="#"><i class="fa fa-picture-o"></i> Image</a></li>
+                  <li><a href="#"><i class="fa fa-link"></i> Link</a></li>
+              </ul>
+            </li>
+          </ul>  
 	    </div>
 	</nav>
 <main role="main">
@@ -46,8 +57,19 @@
     <section class="content">
 	    <div class="container">
 	        <div class="header">
+            <!-- RESPONSIVE NAV -->
+            <a class="hamburger" id="menu" href="#">&#9776;</a>
 	         	<h1>All Items</h1>
-	         	<a href="#" class="bttn">+ Add</a>
+	         	<ul class="menu">
+              <li>
+                <a href="#" class="bttn">+ Add</a>
+                <ul>
+                    <li><a href="#"><i class="fa fa-file-o"></i> Note</a></li>
+                    <li><a href="#"><i class="fa fa-picture-o"></i> Image</a></li>
+                    <li><a href="#"><i class="fa fa-link"></i> Link</a></li>
+                </ul>
+              </li>
+          </ul>
 	        </div>
 	    </div>
 
@@ -120,6 +142,22 @@
        		</div>
        	</div>
 	</section>
- </main>
+</main>
+
+<!-- JS -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/dropit.js"></script>
+<script type="text/javascript">
+    $(".menu").dropit();
+    $(".menu-settings").dropit();
+    $( "#menu" ).click(function() {
+         $("#left-nav").toggleClass("open", 200);
+     });
+    $( function(){
+      $('.hamburger').click( function() {
+        $(this).toggleClass("transparent");
+      });
+    });
+</script>
 </body>
 </html>
