@@ -15,11 +15,6 @@
     float:right;
     display:inline-block;
 }
-    @media (min-width:320px) {
-        .dropit {
-        margin: 15px 0 0;
-    }        
-}
 .dropit .dropit-trigger { position: relative; }
 .dropit .dropit-submenu {
     position: absolute;
