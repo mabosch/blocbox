@@ -30,7 +30,7 @@
 .menu-settings.dropit .dropit-submenu {
     position: absolute;
     top: -210px;
-    right: -10px; /* dropdown left or right */
+    right: -25px; /* dropdown left or right */
     z-index: 1000;
     display: none;
     min-width: 150px;
@@ -74,7 +74,7 @@
     width: 0;
     z-index: 1;
     top: 100%;
-    right: 10px;
+    right: 24px;
     transform: rotate(180deg);
 }
 .dropit .dropit-open .dropit-submenu li {

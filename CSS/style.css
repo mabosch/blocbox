@@ -870,10 +870,12 @@ footer .logo{
         z-index: 100;
 }
 .x-position {
-	color: #FFFFFF;
-	background: transparent;
-	margin-left: 120px; 
-	margin-top: 2px;
+	position: fixed !important; 
+	top: 0;
+	left: 220px;
+}
+.x-position span{
+	background: #FFFFFF !important;
 }
 .left-nav .site-logo {
    	padding: 10px 0 10px 6%;
@@ -946,8 +948,8 @@ footer .logo{
         -o-transform: translate(0,0); /** Opera **/
         -moz-transform: translate(0,0); /** Firefox **/
     }
-    .nav-icon1 {
-     	display: none;
+    #nav-icon1 span{
+     	display: none !important;
     }
 }
 
@@ -1059,6 +1061,33 @@ footer .logo{
    	margin:5px 0 0;
 }
 
+/* Smaller Mobile Devices */
+@media (max-width:459px) {
+    .content {
+     	padding:1.5em 1%;
+     	float:right;
+     	width: 100%;
+     	position: relative;
+    }
+   	.content-item {
+   		float: none;
+     	width:96%;
+     	margin:0 2% 15px;
+     	float:none;
+     	display:block;
+   	}
+   	.item-box{
+   		margin: auto;
+   	}
+   	.content .header h1 {
+	    margin: 15px 0 30px 60px;
+	    font-size: 24px;
+	}
+	.bttn{
+		padding: 10px 20px;
+	}
+}
+
 /* Larger Mobile Devices */
 @media (min-width:460px) {
     .content {
@@ -1132,10 +1161,10 @@ footer .logo{
 	  -moz-transform: rotate(0deg);
 	  -o-transform: rotate(0deg);
 	  transform: rotate(0deg);
-	  -webkit-transition: .5s ease-in-out;
-	  -moz-transition: .5s ease-in-out;
-	  -o-transition: .5s ease-in-out;
-	  transition: .5s ease-in-out;
+	  -webkit-transition: 1s ease-in-out;
+	  -moz-transition: 1s ease-in-out;
+	  -o-transition: 1s ease-in-out;
+	  transition: 1s ease-in-out;
 	  cursor: pointer;
 }
 
@@ -1152,10 +1181,10 @@ footer .logo{
 	  -moz-transform: rotate(0deg);
 	  -o-transform: rotate(0deg);
 	  transform: rotate(0deg);
-	  -webkit-transition: .25s ease-in-out;
-	  -moz-transition: .25s ease-in-out;
-	  -o-transition: .25s ease-in-out;
-	  transition: .25s ease-in-out;
+	  -webkit-transition: .5s ease-in-out;
+	  -moz-transition: .5s ease-in-out;
+	  -o-transition: .5s ease-in-out;
+	  transition: .5s ease-in-out;
 }
 
 #nav-icon1 span:nth-child(1) {
